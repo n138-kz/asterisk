@@ -26,7 +26,7 @@ RUN apt-get install -y libreadline8
 RUN apt-get install -y libssl-dev
 RUN apt-get install -y net-tools
 RUN apt-get install -y opus-tools
-RUN apt-get install -y postgresql-client-12
+RUN apt-get install -y postgresql-client
 RUN apt-get install -y postgresql-client-common
 RUN apt-get install -y sudo
 RUN apt-get install -y unzip
