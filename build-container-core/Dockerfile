@@ -3,9 +3,11 @@ WORKDIR /tmp
 
 ARG country_code
 ARG asterisk_version
+ARG ciscolibsrtp_version
 
 RUN echo "::debug::\${country_code}: ${country_code}"
 RUN echo "::debug::\${asterisk_version}: ${asterisk_version}"
+RUN echo "::debug::\${ciscolibsrtp_version}: ${ciscolibsrtp_version}"
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y upgrade && echo "apt upgraded at: $(date)($(date +%s))" > apt_upgraded.txt

@@ -12,5 +12,6 @@ services:
       context: build-container-core/
       args:
         - country_code=${country_code:-81}
+        - ciscolibsrtp_version=${ciscolibsrtp_version:-2.7.0}
         - asterisk_version=${asterisk_version:-16.8.0}
 
