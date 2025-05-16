@@ -11,6 +11,6 @@ services:
     build:
       context: build-container-core/
       args:
-        - country_code="${country_code:-81}"
-        - asterisk_version="${asterisk_version:-16.8.0}"
+        - country_code=${country_code:-81}
+        - asterisk_version=${asterisk_version:-16.8.0}
 
