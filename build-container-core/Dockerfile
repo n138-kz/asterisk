@@ -19,3 +19,11 @@ RUN apt-get install -y wget
 RUN apt-get install -y make
 
 RUN if [ ! -d /usr/local/src ]; then mkdir -p /usr/local/src; fi
+
+# Install libsrtp
+RUN wget -O - https://github.com/cisco/libsrtp/archive/v2.7.0.tar.gz | tar zx -C /usr/local/src \
+  && cd /usr/local/src/libsrtp-2.7.0 \
+  && ./configure --prefix=/usr/local/libsrtp --enable-openssl \
+  && make \
+  && make install \
+  && rm -rf /usr/local/src/libsrtp-2.7.0
