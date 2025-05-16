@@ -25,6 +25,22 @@ jobs:
     secrets: inherit # pass all secrets, Require: secrets.DISCORD_WEBHOOK_URL
 
   build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Print the recipe
+        working-directory: ./
+        run: |
+          docker compose convert
+
+      - name: Build the cluster
+        working-directory: ./
+        run: |
+          docker compose build
+
+  build_container:
 
     runs-on: ubuntu-latest
 
