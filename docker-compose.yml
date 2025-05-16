@@ -1,0 +1,16 @@
+services:
+  asterisk-core:
+    container_name: asterisk-core
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Asia/Tokyo
+      LANG: "C"
+      LANGUAGE: "C"
+      LC_ALL: "C"
+    build:
+      context: build-container-core/
+      args:
+        - country_code="${country_code:-81}"
+        - asterisk_version="${asterisk_version:-16.8.0}"
+
