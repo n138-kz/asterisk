@@ -1,0 +1,49 @@
+name: Docker Container for Ubuntu 24.04 LTS
+
+on:
+  workflow_dispatch:
+    inputs:
+      gh_actor_message:
+        default: Test RUN
+        required: true
+        description: Actor message
+        type: string
+  push:
+    paths:
+      - "**/Dockerfile"
+      - ".github/workflows/docker-image.yml"
+  schedule:
+    - cron: "0 5 * * 0"
+
+permissions:
+  contents: read
+
+jobs:
+  send_github_context:
+    uses: n138-kz/Dockerfile/.github/workflows/github-act_send_github_context.yml@main
+    # https://github.com/n138-kz/Dockerfile/blob/main/.github/workflows/github-act_send_github_context.yml
+    secrets: inherit # pass all secrets
+
+  docker_login:
+    uses: n138-kz/Dockerfile/.github/workflows/github-act_docker_login.yml@main
+    # https://github.com/n138-kz/Dockerfile/blob/main/.github/workflows/github-act_docker_login.yml.yml
+    secrets: inherit # pass all secrets
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the Image
+        working-directory: n138-kz/ubuntu2404
+        run: |
+          docker build \
+          --no-cache \
+          --progress=plain \
+          --tag ${{ vars.docker_credential_username }}/ubuntu:24 \
+          .
+
+      - name: Inspect the Image
+        run: docker inspect ${{ vars.docker_credential_username }}/ubuntu:24 | jq
