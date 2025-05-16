@@ -37,4 +37,5 @@ jobs:
           docker build \
           --no-cache \
           --progress=plain \
+          --env-file=.env
           .
