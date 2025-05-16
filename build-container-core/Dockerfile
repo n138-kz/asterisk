@@ -17,6 +17,21 @@ RUN apt-get install -y language-pack-ja-base language-pack-ja ibus-mozc && \
 
 RUN apt-get install -y wget
 RUN apt-get install -y make gcc
+RUN apt-get install -y build-essential
+RUN apt-get install -y gdb
+RUN apt-get install -y libopus-dev
+RUN apt-get install -y libopus0
+RUN apt-get install -y libreadline-dev
+RUN apt-get install -y libreadline8
+RUN apt-get install -y libssl-dev
+RUN apt-get install -y net-tools
+RUN apt-get install -y opus-tools
+RUN apt-get install -y postgresql-client-12
+RUN apt-get install -y postgresql-client-common
+RUN apt-get install -y sudo
+RUN apt-get install -y unzip
+RUN apt-get install -y zlib1g
+RUN apt-get install -y zlib1g-dev
 
 RUN if [ ! -d /usr/local/src ]; then mkdir -p /usr/local/src; fi
 
