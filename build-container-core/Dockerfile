@@ -16,5 +16,6 @@ RUN apt-get install -y language-pack-ja-base language-pack-ja ibus-mozc && \
 	update-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
 
 RUN apt-get install -y wget
+RUN apt-get install -y make
 
 RUN if [ ! -d /usr/local/src ]; then mkdir -p /usr/local/src; fi
