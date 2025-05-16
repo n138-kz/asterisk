@@ -65,6 +65,8 @@ RUN wget -O - http://downloads.asterisk.org/pub/telephony/asterisk/releases/aste
   && make samples \
   && rm -rf /usr/local/src/asterisk-${asterisk_version}
 
+RUN useradd -U -m -s /bin/bash asterisk
+
 RUN chown -R asterisk /usr/local/asterisk \
   && ln -s /usr/local/asterisk/sbin/asterisk /usr/bin/asterisk
 
