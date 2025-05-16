@@ -53,6 +53,6 @@ jobs:
           docker build \
           --no-cache \
           --progress=plain \
-          --build-arg country_code=81 \
+          --build-arg country_code="81" \
           --build-arg asterisk_version=16.8.0 \
           .
