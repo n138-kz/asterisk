@@ -25,12 +25,16 @@ jobs:
   docker_login:
     uses: n138-kz/n138-kz/.github/workflows/github-act_docker_login.yml@main
     secrets: inherit
-    
+
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: debug
+        run: |
+          echo '::debug:: title=Date::'$(date +%s)
 
       - name: Print the recipe
         working-directory: ./
@@ -42,19 +46,3 @@ jobs:
         run: |
           docker compose build
 
-  build_container:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build the Image
-        working-directory: build-container-core/
-        run: |
-          docker build \
-          --no-cache \
-          --progress=plain \
-          --build-arg country_code="81" \
-          --build-arg asterisk_version=16.8.0 \
-          .
