@@ -22,6 +22,10 @@ jobs:
     # https://github.com/n138-kz/n138-kz.github.io/blob/master/.github/workflows/github-act_send_github_context.yml
     secrets: inherit # pass all secrets, Require: secrets.DISCORD_WEBHOOK_URL
 
+  docker_login:
+    uses: n138-kz/.github/workflows/github-act_docker_login.yml@main
+    secrets: inherit
+    
   build:
     runs-on: ubuntu-latest
 
