@@ -23,7 +23,7 @@ jobs:
     secrets: inherit # pass all secrets, Require: secrets.DISCORD_WEBHOOK_URL
 
   docker_login:
-    uses: n138-kz/.github/workflows/github-act_docker_login.yml@main
+    uses: n138-kz/n138-kz/.github/workflows/github-act_docker_login.yml@main
     secrets: inherit
     
   build:
