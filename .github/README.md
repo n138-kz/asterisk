@@ -19,7 +19,7 @@
 ## Refs
 
 - [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com)asterisk](https://github.com/n138-kz/asterisk/)
-- [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com)Asterisk のおさらい](https://bike8615.blogspot.com/2017/09/asterisk.html)
+- [![](https://www.google.com/s2/favicons?size=64&domain=https://bike8615.blogspot.com)Asterisk のおさらい](https://bike8615.blogspot.com/2017/09/asterisk.html)
 
 ## License
 
