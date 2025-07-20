@@ -30,7 +30,7 @@ GET https://api.github.com/repos/n138-kz/asterisk
 
 ## Refs
 
-- [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com))asterisk](https://github.com/n138-kz/asterisk/)
+- [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com)asterisk](https://github.com/n138-kz/asterisk/)
 
 ## License
 
