@@ -75,6 +75,6 @@ RUN useradd -U -m -s /bin/bash asterisk
 RUN chown -R asterisk /usr/local/asterisk \
   && ln -s /usr/local/asterisk/sbin/asterisk /usr/bin/asterisk
 
-ONBUILD COPY conf/* /usr/local/asterisk/etc/asterisk/
+ONBUILD COPY config/* /usr/local/asterisk/etc/asterisk/
 
 USER asterisk
