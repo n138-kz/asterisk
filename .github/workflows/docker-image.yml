@@ -1,4 +1,4 @@
-name: Docker Container for Ubuntu 24.04 LTS
+name: Docker Container for Asterisk
 
 on:
   workflow_dispatch:
@@ -40,7 +40,7 @@ jobs:
       - name: Print the recipe
         working-directory: ./
         run: |
-          docker compose convert
+          docker compose config
 
       - name: Build the cluster
         working-directory: ./
