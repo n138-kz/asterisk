@@ -16,18 +16,6 @@
 [![GitHub language count](https://img.shields.io/github/languages/count/n138-kz/asterisk)](/../../)
 [![GitHub top language](https://img.shields.io/github/languages/top/n138-kz/asterisk)](/../../)
 
-## Github RestAPI
-
-```http
-GET https://api.github.com/repos/n138-kz/asterisk
-```
-
-<details>
-
-  [n138-kz/asterisk](https://api.github.com/repos/n138-kz/asterisk) (Public repos only)
-  
-</details>
-
 ## Refs
 
 - [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com)asterisk](https://github.com/n138-kz/asterisk/)
