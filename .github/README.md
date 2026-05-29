@@ -40,6 +40,7 @@
 ## Refs
 
 - [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com)asterisk](https://github.com/n138-kz/asterisk/)
+- [Asterisk18 + Ubuntu で内線電話網を構築 | Qiita](https://qiita.com/n138-kz/items/5a418a60f2d08d8bc3cf)
 
 ## License
 
