@@ -43,4 +43,4 @@
 
 ## License
 
-[Copyright (c) 2026 Yuu Komiya (n138), Under MIT License](LICENSE)  
+[Copyright (c) 2026 Yuu Komiya (n138), Under MIT License](/.github/LICENSE)  
