@@ -1,0 +1,13 @@
+name: asterisk-pbx
+services:  
+  asterisk:
+    build:
+      context: ./docker-build-asterisk/
+      dockerfile: Dockerfile
+    container_name: asterisk
+    restart: unless-stopped
+    tmpfs:
+      - /run
+      - /var/run
+      - /var/log
+      - /tmp
