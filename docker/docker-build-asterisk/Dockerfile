@@ -42,12 +42,12 @@ RUN groupadd -r asterisk && useradd -r -g asterisk asterisk
 RUN chown -R asterisk:asterisk /etc/asterisk /var/log/asterisk /var/lib/asterisk /var/spool/asterisk /usr/lib/asterisk
 
 # 設定ディレクトリのバックアップ兼退避
-RUN [ -d ./configs ] || mkdir ./configs
-RUN mv /etc/asterisk/*.conf ./configs/
-RUN cp /usr/src/asterisk/configs/samples/asterisk.conf /etc/asterisk/
-RUN cp /usr/src/asterisk/configs/samples/modules.conf /etc/asterisk/
-RUN cp /usr/src/asterisk/configs/samples/pjsip.conf /etc/asterisk/
-RUN cp /usr/src/asterisk/configs/samples/extensions.conf /etc/asterisk/
+RUN [ -d ./configs ] || mkdir ./configs && \
+    mv /etc/asterisk/*.conf ./configs/ && \
+    cp ./configs/samples/asterisk.conf \
+        ./configs/samples/modules.conf \
+        ./configs/samples/pjsip.conf \
+        ./configs/samples/extensions.conf /etc/asterisk/
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
