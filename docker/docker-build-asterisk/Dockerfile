@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y \
     libopus-dev \
     libavformat-dev \
     libavcodec-dev \
-    libavutil-dev
+    libavutil-dev \
+    libpjsip-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src
 RUN wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-23.3.0.tar.gz && \
