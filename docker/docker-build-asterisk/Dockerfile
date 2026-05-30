@@ -39,6 +39,17 @@ RUN make -j$(nproc) && make install && make samples
 RUN groupadd -r asterisk && useradd -r -g asterisk asterisk
 RUN chown -R asterisk:asterisk /etc/asterisk /var/log/asterisk /var/lib/asterisk /var/spool/asterisk /usr/lib/asterisk
 
+# 設定ディレクトリのバックアップ兼退避
+RUN mkdir /etc/asterisk/samples
+RUN mv /etc/asterisk/*.conf /etc/asterisk/samples/
+RUN cp /etc/asterisk/samples/asterisk.conf /etc/asterisk/
+RUN cp /etc/asterisk/samples/modules.conf /etc/asterisk/
+RUN cp /etc/asterisk/samples/pjsip.conf /etc/asterisk/
+RUN cp /etc/asterisk/samples/extensions.conf /etc/asterisk/
+RUN BACKUP_DATE="$(date +%Y%m%d-%H%M%S)" && \
+    mv /etc/asterisk/samples /etc/asterisk/samples-${BACKUP_DATE} && \
+    ln -s /etc/asterisk/samples-${BACKUP_DATE} /etc/asterisk/samples
+
 CMD ["/usr/sbin/asterisk", "-f", "-U", "asterisk"]
 # # asterisk -h
 # Asterisk 23.3.0, Copyright (C) 1999 - 2025, Sangoma Technologies Corporation and others.
