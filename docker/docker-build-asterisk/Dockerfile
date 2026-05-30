@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y \
     libavformat-dev \
     libavcodec-dev \
     libavutil-dev \
-    subversion \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src
@@ -31,9 +30,6 @@ WORKDIR /usr/src/asterisk-23.3.0
 # Dockerにおいては、OSの apt で必要な -dev パッケージを先にインストールしておく方が、レイヤーのキャッシュ効率が良くなります。
 # install_prereq はパッケージ名がOSごとに定義されているシェルスクリプトなので、トラブルシューティングや環境構築の初期段階での確認に使うのが適しています。
 # RUN ./contrib/scripts/install_prereq install
-
-# MP3サポートが必要な場合
-RUN ./contrib/scripts/get_mp3_source.sh
 
 # 設定とビルド
 RUN ./configure --with-jansson-bundled --with-pjproject-bundled && \
