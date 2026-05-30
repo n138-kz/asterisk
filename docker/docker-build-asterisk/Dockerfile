@@ -32,6 +32,7 @@ RUN ./contrib/scripts/get_mp3_source.sh
 
 # 設定とビルド
 RUN ./configure --with-jansson-bundled --with-pjproject-bundled
+RUN make menuselect.makeopts
 RUN menuselect/menuselect --enable format_mp3 menuselect.makeopts
 RUN make -j$(nproc) && make install && make samples
 
