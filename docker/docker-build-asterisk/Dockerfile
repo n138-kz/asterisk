@@ -43,7 +43,8 @@ RUN chown -R asterisk:asterisk /etc/asterisk /var/log/asterisk /var/lib/asterisk
 
 # 設定ディレクトリのバックアップ兼退避
 RUN [ -d ./configs ] || mkdir ./configs && \
-    mv /etc/asterisk/*.conf ./configs/ && \
+    [ -d ./configs/samples ] || mkdir ./configs/samples && \
+    mv /etc/asterisk/*.conf ./configs/samples/ && \
     cp ./configs/samples/asterisk.conf \
         ./configs/samples/modules.conf \
         ./configs/samples/pjsip.conf \
