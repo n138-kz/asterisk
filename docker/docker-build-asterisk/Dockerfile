@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     libavformat-dev \
     libavcodec-dev \
     libavutil-dev \
+    subversion \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src
@@ -25,6 +26,9 @@ RUN wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-23.3.0.t
     tar xz -f asterisk-23.3.0.tar.gz
 
 WORKDIR /usr/src/asterisk-23.3.0
+
+# MP3サポートが必要な場合
+RUN ./contrib/scripts/get_mp3_source.sh
 
 # 設定とビルド
 RUN ./configure --with-jansson-bundled --with-pjproject-bundled && \
