@@ -29,9 +29,6 @@ RUN wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-23.3.0.t
 
 WORKDIR /usr/src/asterisk
 
-# シンボリックリンクを作成して、ビルド後のファイルを参照しやすくする
-RUN ln -s $(pwd) /usr/src/asterisk
-
 # MP3サポートが必要な場合
 RUN ./contrib/scripts/get_mp3_source.sh
 
