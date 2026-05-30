@@ -23,9 +23,11 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /usr/src
 RUN wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-23.3.0.tar.gz && \
-    tar xz -f asterisk-23.3.0.tar.gz
+    tar xz -f asterisk-23.3.0.tar.gz && \
+    rm asterisk-23.3.0.tar.gz && \
+    ln -s asterisk-23.3.0 /usr/src/asterisk
 
-WORKDIR /usr/src/asterisk-23.3.0
+WORKDIR /usr/src/asterisk
 
 # シンボリックリンクを作成して、ビルド後のファイルを参照しやすくする
 RUN ln -s $(pwd) /usr/src/asterisk
