@@ -31,10 +31,9 @@ WORKDIR /usr/src/asterisk-23.3.0
 RUN ./contrib/scripts/get_mp3_source.sh
 
 # 設定とビルド
-RUN ./configure --with-jansson-bundled --with-pjproject-bundled && \
-    make -j$(nproc) && \
-    make install && \
-    make samples
+RUN ./configure --with-jansson-bundled --with-pjproject-bundled
+RUN menuselect/menuselect --enable format_mp3 menuselect.makeopts
+RUN make -j$(nproc) && make install && make samples
 
 RUN groupadd -r asterisk && useradd -r -g asterisk asterisk
 RUN chown -R asterisk:asterisk /etc/asterisk /var/log/asterisk /var/lib/asterisk /var/spool/asterisk /usr/lib/asterisk
