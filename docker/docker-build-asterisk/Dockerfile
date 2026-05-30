@@ -26,11 +26,6 @@ RUN wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-23.3.0.t
 
 WORKDIR /usr/src/asterisk-23.3.0
 
-# Install Asterisk prerequisites(プリリクイスト(前提条件)のインストール)
-# Dockerにおいては、OSの apt で必要な -dev パッケージを先にインストールしておく方が、レイヤーのキャッシュ効率が良くなります。
-# install_prereq はパッケージ名がOSごとに定義されているシェルスクリプトなので、トラブルシューティングや環境構築の初期段階での確認に使うのが適しています。
-# RUN ./contrib/scripts/install_prereq install
-
 # 設定とビルド
 RUN ./configure --with-jansson-bundled --with-pjproject-bundled && \
     make -j$(nproc) && \
