@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     libavcodec-dev \
     libavutil-dev \
     libpjsip-dev \
+    subversion \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src
