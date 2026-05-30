@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y \
     libavformat-dev \
     libavcodec-dev \
     libavutil-dev \
-    libpjsip-dev \
     subversion \
     && rm -rf /var/lib/apt/lists/*
 
