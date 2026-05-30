@@ -10,10 +10,26 @@ services:
       - "5060:5060/tcp"
       - "10000-20000:10000-20000/udp"
     volumes:
-      - ./etc_asterisk:/etc/asterisk
-      - ./lib_asterisk:/var/lib/asterisk
-      - ./log_asterisk:/var/log/asterisk
-      - ./spool_asterisk:/var/spool/asterisk
+      - type: bind
+        source: ./etc_asterisk
+        target: /etc/asterisk
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./lib_asterisk
+        target: /var/lib/asterisk
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./log_asterisk
+        target: /var/log/asterisk
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./spool_asterisk
+        target: /var/spool/asterisk
+        bind:
+          create_host_path: false
     restart: unless-stopped
     tmpfs:
       - /run
