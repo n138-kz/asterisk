@@ -5,6 +5,10 @@ services:
       context: ./docker-build-asterisk/
       dockerfile: Dockerfile
     container_name: asterisk
+    ports:
+      - "5060:5060/udp"
+      - "5060:5060/tcp"
+      - "10000-20000:10000-20000/udp"
     restart: unless-stopped
     tmpfs:
       - /run
