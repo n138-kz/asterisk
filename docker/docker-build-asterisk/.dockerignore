@@ -1,0 +1,6 @@
+# .dockerignore
+asterisk-*.tar.gz
+*.o
+*.so
+.git
+.gitignore
